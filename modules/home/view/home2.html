@@ -1,0 +1,180 @@
+<h3>Title Customization</h3>
+<form name="customizationForm">
+<input type="text" class="form-control" id="textTitle" name="textTitle" ng-model="title.text" placeholder="Enter Title" ng-maxlength="35" required >
+<div class="ng-cloak error-block" ng-if="!customizationForm.textTitle.$valid" >
+    <span ng-show="customizationForm.textTitle.$error.maxlength">
+<img src="resources/images/invalid.svg" class="error-img" />
+</span>
+    <div ng-show="customizationForm.textTitle.$error.maxlength" class="error-field">
+        Mandatory : This cannot be left blank.</div>
+</div>
+<input type="color" ng-model="title.color" value="#ff0000">
+<select class="field form-input form-control" id="titleFontStrength" ng-options="option for option in fontStrengthList" name="titleFontStrength" ng-model="title.fontStrength" required>
+    <option class="opt-default" value="" selected="selected">Select Font Strength
+    </option>
+</select>
+<select class="field form-input form-control" id="titleFontType" ng-options="option for option in fontTypeList" name="titleFontType" ng-model="title.fontType" required>
+    <option class="opt-default" value="" selected="selected">Select Font Type
+    </option>
+</select>
+<select class="field form-input form-control" id="titleFontSize" ng-options="option for option in fontSizeList" name="titleFontSize" ng-model="title.fontSize" required>
+    <option class="opt-default" value="" selected="selected">Select Font Size
+    </option>
+</select>
+
+<!-- <input type="text" class="form-control" name="fontSize" ng-model="title.fontSize" placeholder="Enter Font Size" required > -->
+<input type="text" class="form-control" name="alignment" ng-model="title.alignment" placeholder="Enter Alignment" required >
+<input type="text" class="form-control" name="paddingLeft" ng-model="title.paddingLeft" placeholder="Enter Padding Left" required >
+<input type="text" class="form-control" name="alignment" ng-model="title.paddingRight" placeholder="Enter Padding Rigth" required >
+<input type="text" class="form-control" name="alignment" ng-model="title.paddingTop" placeholder="Enter Padding Top" required >
+<input type="text" class="form-control" name="alignment" ng-model="title.paddingBottom" placeholder="Enter Padding Bottom" required >
+
+<h3>Description</h3>
+<input type="text" class="form-control" name="descriptionTitle" ng-model="description.text" placeholder="Enter Description" ng-maxlength="90" required >
+<div class="ng-cloak error-block" ng-if="!customizationForm.descriptionTitle.$valid" >
+    <span ng-show="customizationForm.descriptionTitle.$error.maxlength">
+<img src="resources/images/invalid.svg" class="error-img" />
+</span>
+    <div ng-show="customizationForm.descriptionTitle.$error.maxlength" class="error-field">
+        Mandatory : This cannot be left blank.</div>
+</div>
+<input type="color" ng-model="descriptionFontStrength.color" value="#ff0000">
+<select class="field form-input form-control" id="descriptionFontStrength" ng-options="option for option in fontStrengthList" name="descriptionFontStrength" ng-model="description.fontStrength" required>
+    <option class="opt-default" value="" selected="selected">Select Font Strength
+    </option>
+</select>
+<select class="field form-input form-control" id="descriptionFontType" ng-options="option for option in fontTypeList" name="descriptionFontType" ng-model="description.fontType" required>
+    <option class="opt-default" value="" selected="selected">Select Font Type
+    </option>
+</select>
+<select class="field form-input form-control" id="descriptionFontSize" ng-options="option for option in fontSizeList" name="descriptionFontSize" ng-model="description.fontSize" required>
+    <option class="opt-default" value="" selected="selected">Select Font Size
+    </option>
+</select>
+
+<!-- <input type="text" class="form-control" name="descriptionFontStrength" ng-model="description.fontStrength" placeholder="Enter Font Strength" required >
+<input type="text" class="form-control" name="descriptionFontType" ng-model="description.fontType" placeholder="Enter Font Type" required >
+<input type="text" class="form-control" name="descriptionFontSize" ng-model="description.fontSize" placeholder="Enter Font Size" required > -->
+<input type="text" class="form-control" name="descriptionAlignment" ng-model="description.alignment" placeholder="Enter Alignment" required >
+<input type="text" class="form-control" name="descriptionPaddingLeft" ng-model="description.paddingLeft" placeholder="Enter Padding Left" required >
+<input type="text" class="form-control" name="descriptionPaddingRight" ng-model="description.paddingRight" placeholder="Enter Padding Rigth" required >
+<input type="text" class="form-control" name="descriptionPaddingTop" ng-model="description.paddingTop" placeholder="Enter Padding Top" required >
+<input type="text" class="form-control" name="descriptionPaddingBottom" ng-model="description.paddingBottom" placeholder="Enter Padding Bottom" required >
+
+
+<h3>CTA Button</h3>
+<input type="text" class="form-control" name="buttonText" ng-model="button.text" placeholder="Enter Button Title" ng-maxlength="15" required >
+<div class="ng-cloak error-block" ng-if="!customizationForm.buttonText.$valid" >
+    <span ng-show="customizationForm.buttonText.$error.maxlength">
+<img src="resources/images/invalid.svg" class="error-img" />
+</span>
+    <div ng-show="customizationForm.buttonText.$error.maxlength" class="error-field">
+        Mandatory : This cannot be left blank.</div>
+</div>
+
+<label>Button Color:</label>
+<input type="color" ng-model="button.color" value="#ff0000">
+<label>Button Text Color:</label>
+
+<input type="color" ng-model="button.textColor" value="#ff0000">
+<input type="text" class="form-control" name="buttonFontStrength" ng-model="button.fontStrength" placeholder="Enter Font Strength" required >
+<input type="text" class="form-control" name="buttonFontType" ng-model="button.fontType" placeholder="Enter Font Type" required >
+<input type="text" class="form-control" name="buttonFontSize" ng-model="button.fontSize" placeholder="Enter Font Size" required >
+<input type="text" class="form-control" name="buttonAlignment" ng-model="button.alignment" placeholder="Enter Alignment" required >
+<input type="text" class="form-control" name="buttonPaddingLeft" ng-model="button.paddingLeft" placeholder="Enter Padding Left" required >
+<input type="text" class="form-control" name="buttonPaddingRight" ng-model="button.paddingRight" placeholder="Enter Padding Rigth" required >
+<input type="text" class="form-control" name="buttonPaddingTop" ng-model="button.paddingTop" placeholder="Enter Padding Top" required >
+<input type="text" class="form-control" name="buttonPaddingBottom" ng-model="button.paddingBottom" placeholder="Enter Padding Bottom" required >
+
+<!-- <input type="text" class="form-control" name="buttonFontStrength" ng-model="image.opacity" placeholder="Image Opacity" required > -->
+
+
+<label>Logo</label>
+<label>Upload Logo</label>
+<div block-ui="logoImageBlockUi" ng-if="text.logoFileView == undefined || (text.logoFileView != undefined && text.logoFileView.filename == undefined)">
+    <input type="file" ng-model="text.logoFileView"  onchange="angular.element(this).scope().uploadLogo(this)" data-height="150" />
+</div>        
+<label>Right</label>
+<input type="radio" name="logo" ng-model="position.logo" value="right">
+<label>Left</label>
+<input type="radio" name="logo" ng-model="position.logo" value="left">
+
+<select class="field form-input form-control" id="imageOpacity" ng-options="option for option in imageOpacityList" name="imageOpacity" ng-model="image.imageOpacity" required>
+    <option class="opt-default" value="" selected="selected">Select Image Opacity
+    </option>
+</select>
+
+</form>
+<div class="container" ng-controller="headerController">
+<div id="html-content-holder" block-ui="imageBlockUi">
+
+    <div ng-if="text.imageFileView == undefined ">
+        <input type="file" ng-model="text.imageFileView" class="drop-box" onchange="angular.element(this).scope().uploadImage(this)" data-height="150" />
+    </div>        
+    <div class="box" ng-if="text.imageFileView != undefined && (text.imageFileView != undefined && text.imageFileView.filename != undefined)">
+        <img src="{{publicResourceUrl}}{{appUrl.resourceImageDownload}}{{text.imageFileView.filename}}" alt="{{text.imageFileView.originalname}}" class="dragDropImg" ng-style="{'opacity': image.imageOpacity}">
+        <img src="{{publicResourceUrl}}{{appUrl.resourceImageDownload}}{{text.logoFileView.filename}}" class="over-img" ng-style="{ 'left' : (position.logo == 'right') ? '80%' : '1%' }"/>
+
+    </div>
+    <div ng-if="text.logoFileView != undefined && text.logoFileView.filename != undefined">
+        <p> {{text.logoFileView.originalname}}</p>
+        <button  type="button" class="dropify-clear" ng-click="removeFile(text)">Remove</button>
+    </div>
+
+    <div ><span ng-style="{'color': title.color, 'font-style': title.fontStrength, 'font-family': title.fontType, 'font-size': title.fontSize, 'text-align': title.alignment, 'padding-left': title.paddingLeft, 'padding-right': title.paddingRight, 'padding-top': title.paddingTop, 'padding-bottom': title.paddingBottom }">{{title.text}}</span></div>
+    <div class="bottom-right"><span ng-style="{'color': description.color, 'font-style': description.fontStrength, 'font-family': description.fontType, 'font-size': description.fontSize, 'text-align': description.alignment, 'padding-left': description.paddingLeft, 'padding-right': description.paddingRight, 'padding-top': description.paddingTop, 'padding-bottom': description.paddingBottom }">{{description.text}}</span></div>
+    <button type="button" class="centered" ng-style="{'background-color': button.color, 'padding-left': button.paddingLeft, 'padding-right': button.paddingRight, 'padding-top': button.paddingTop, 'padding-bottom': button.paddingBottom }" ng-if="text.imageFileView != undefined && (text.imageFileView != undefined && text.imageFileView.filename != undefined)"><span ng-style="{'color': button.textColor, 'font-style': button.fontStrength, 'font-family': button.fontType, 'font-size': button.fontSize, 'text-align': button.alignment,}">{{button.text}}</span></button>
+
+
+</div>
+<div id="test">
+    <input id="btn-Preview-Image" type="button"
+    value="Preview" /> 
+    
+    <a id="btn-Convert-Html2Image" href="#"> 
+    Download 
+    </a> 
+    
+    <br/> 
+    
+    <h3>Preview :</h3> 
+    
+    <div id="previewImage"></div> 
+    
+</div>
+
+<script> 
+    $(document).ready(function() { 
+
+    // Global variable 
+    var element = $("#html-content-holder"); 
+
+    // Global variable 
+    var getCanvas; 
+
+    $("#btn-Preview-Image").on('click', function() { 
+    html2canvas(element, { 
+        onrendered: function(canvas) { 
+            $("#previewImage").append(canvas); 
+            getCanvas = canvas; 
+        } 
+    }); 
+    }); 
+
+    $("#btn-Convert-Html2Image").on('click', function() { 
+    var imgageData = 
+        getCanvas.toDataURL("image/png"); 
+
+    // Now browser starts downloading 
+    // it instead of just showing it 
+    var newData = imgageData.replace( 
+    /^data:image\/png/, "data:application/octet-stream"); 
+
+    $("#btn-Convert-Html2Image").attr( 
+    "download", "ImageDownload.png").attr( 
+    "href", newData); 
+    }); 
+    }); 
+    </script> 
+
+</div>

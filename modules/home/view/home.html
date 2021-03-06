@@ -1,0 +1,510 @@
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <nav id="sidebar" >
+        <div class="sidebar-header">
+            <div class="row">
+                <div class="col-6 align-self-center">
+                    <div class="logoText">logo</div>
+                </div>
+                <div class="col-6 align-self-center">
+                    <div class="downlodBtn">
+                        <a href="#" class="dBtn" id="btn-Convert-Html2Image" >Download</a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <form name="customizationForm">
+            <ul class="list-unstyled components">
+              
+                    <li >
+                        <a href="javascript:void(0)" data-target="#AssetsSubmenu" data-toggle="collapse"  aria-expanded="false" class="dropdown-toggle">
+                            Assets
+                        </a>
+                        <div class="collapse list-unstyled" id="AssetsSubmenu">
+                            <div class="submenuCol">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label>Logo Alignment</label>
+                                            <!-- <input type="text" class="form-control" name="alignment" ng-model="title.alignment" placeholder="Enter Alignment"> -->
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" id="logoAlignmentLeft" name="logoAlignmentLeft" ng-model="logo.alignment" value="left">
+                                                <label class="custom-control-label" for="logoAlignmentLeft">left</label>
+                                            </div>
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" id="logoAlignmentCenter" name="logoAlignmentCenter"ng-model="logo.alignment"  value="center">
+                                                <label class="custom-control-label" for="logoAlignmentCenter">Center</label>
+                                            </div>
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" id="logoAlignmentRight" name="logoAlignmentRight" ng-model="logo.alignment" value="right">
+                                                <label class="custom-control-label" for="logoAlignmentRight">Right</label>
+                                            </div>
+                                        </div>
+                                    </div>
+        
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label>Logo</label>
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input" id="logoFileView" name="logoFileView" ng-model="logo.logoFileView"  onchange="angular.element(this).scope().uploadLogo(this)">
+                                                <label class="custom-file-label" for="customFile">Upload Logo</label>
+                                              </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label>Background Image</label>
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input" id="backGroundImageFile" ng-model="backGroundImage" name="backGroundImageFile" onchange="angular.element(this).scope().uploadImage(this)">
+                                                <label class="custom-file-label" for="customFile">Upload Background Image</label>
+                                              </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label>Background Image Opacity</label>
+                                            <select class="field form-input form-control" id="imageOpacity" ng-options="option for option in imageOpacityList" name="imageOpacity" ng-model="image.imageOpacity" >
+                                                <option class="opt-default" value="" selected="selected">Select Opacity
+                                                </option>
+                                            </select>                                                
+                                        </div>
+                                    </div>
+    
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a  href="javascript:void(0)" data-target="#TextSubmenu"  data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                            Title
+                        </a>
+                        <div class="collapse list-unstyled" id="TextSubmenu">
+                            <div class="submenuCol">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label>Text</label>
+                                            <input class="form-control" type="text" ng-model="title.text" id="textTitle" name="textTitle" placeholder="Enter Title" ng-maxlength="35">
+                                            <div class="ng-cloak error-block" ng-if="!customizationForm.textTitle.$valid" >
+                                                <span ng-show="customizationForm.textTitle.$error.maxlength">
+                                            <img src="resources/images/invalid.svg" class="error-img" />
+                                            </span>
+                                                <div ng-show="customizationForm.textTitle.$error.maxlength" class="error-field">
+                                                    Mandatory : This cannot be left blank.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label>Color</label>
+                                            <input type="color" class="form-control" id="textColor" ng-model="title.color" value="#ff0000"> 
+                                       </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label>Font Style</label>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="titleIsBold" name="titleIsBold" ng-model="title.isBold">
+                                                <label class="custom-control-label" for="titleIsBold">Bold</label>
+                                              </div>
+                                              <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="titleIsUnderline" name="titleIsUnderline" ng-model="title.isUnderline" >
+                                                <label class="custom-control-label" for="titleIsUnderline">Underline</label>
+                                              </div>
+                                              <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="titleIsItalic" name="titleIsItalic" ng-model="title.isItalic">
+                                                <label class="custom-control-label" for="titleIsItalic">Italic</label>
+                                              </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label>Font Type</label>
+                                            <select class="field form-input form-control" id="titleFontType" ng-options="option for option in fontTypeList" name="titleFontType" ng-model="title.fontType" required>
+                                                <option class="opt-default" value="" selected="selected">Select Font Type
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>    
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label>Font Size</label>
+                                            <select class="field form-input form-control" id="titleFontSize" ng-options="option for option in fontSizeList" name="titleFontSize" ng-model="title.fontSize" required>
+                                                <option class="opt-default" value="" selected="selected">Select Font Size
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>   
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label>Alignment</label>
+                                            <!-- <input type="text" class="form-control" name="alignment" ng-model="title.alignment" placeholder="Enter Alignment"> -->
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" id="titleAlignmentLeft" name="titleAlignmentLeft" ng-model="title.alignment" value="left">
+                                                <label class="custom-control-label" for="titleAlignmentLeft">left</label>
+                                            </div>
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" id="titleAlignmentCenter" name="titleAlignmentCenter"ng-model="title.alignment"  value="center">
+                                                <label class="custom-control-label" for="titleAlignmentCenter">Center</label>
+                                            </div>
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" id="titleAlignmentRight" name="titleAlignmentRight" ng-model="title.alignment" value="right">
+                                                <label class="custom-control-label" for="titleAlignmentRight">Right</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label>Padding</label>
+                                            <div class="row">
+                                                <div class="col-6"><input type="text" class="form-control" id="titlePaddingTop" ng-model="title.paddingTop" placeholder="top"> </div>
+                                                <div class="col-6"><input type="text" class="form-control" id="titlePaddingBottom" ng-model="title.paddingBottom" placeholder="bottom"> </div>
+                                                <div class="col-6"><input type="text" class="form-control" id="titlePaddingLeft" ng-model="title.paddingLeft" placeholder="left"> </div>
+                                                <div class="col-6"><input type="text" class="form-control" id="titlePaddingRight" ng-model="title.paddingRight" placeholder="right"> </div>
+                                            </div>
+                                        </div>
+                                    </div>    
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label>margin</label>
+                                            <div class="row">
+                                                <div class="col-6"><input type="text" class="form-control" id="titleMarginTop" ng-model="title.marginTop" placeholder="top"> </div>
+                                                <div class="col-6"><input type="text" class="form-control" id="titleMarginBottom" ng-model="title.marginBottom" placeholder="bottom"> </div>
+                                                <div class="col-6"><input type="text" class="form-control" id="titleMarginLeft" ng-model="title.marginLeft" placeholder="left"> </div>
+                                                <div class="col-6"><input type="text" class="form-control" id="titleMarginRight" ng-model="title.marginRight" placeholder="right"> </div>
+                                            </div>
+                                        </div>
+                                    </div>    
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a  href="javascript:void(0)" data-target="#DescriptionSubmenu"  data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                            Description
+                        </a>
+                        <div class="collapse list-unstyled" id="DescriptionSubmenu">
+                            <div class="submenuCol">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label>Text</label>
+                                            <input class="form-control" type="text" ng-model="description.text" id="descriptionTitle" name="descriptionTitle" placeholder="Enter Description" ng-maxlength="90">
+                                            <div class="ng-cloak error-block" ng-if="!customizationForm.descriptionTitle.$valid" >
+                                                <span ng-show="customizationForm.descriptionTitle.$error.maxlength">
+                                            <img src="resources/images/invalid.svg" class="error-img" />
+                                            </span>
+                                                <div ng-show="customizationForm.descriptionTitle.$error.maxlength" class="error-field">
+                                                    Mandatory : This cannot be left blank.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label>Color</label>
+                                            <input type="color" class="form-control" id="descriptionColor" ng-model="description.color" value="#ff0000"> 
+                                       </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label>Font Style</label>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="descriptionIsBold" name="descriptionIsBold" ng-model="description.isBold">
+                                                <label class="custom-control-label" for="descriptionIsBold">Bold</label>
+                                              </div>
+                                              <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="descriptionIsUnderline" name="descriptionIsUnderline" ng-model="description.isUnderline" >
+                                                <label class="custom-control-label" for="descriptionIsUnderline">Underline</label>
+                                              </div>
+                                              <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="descriptionIsItalic" name="descriptionIsItalic" ng-model="description.isItalic">
+                                                <label class="custom-control-label" for="descriptionIsItalic">Italic</label>
+                                              </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label>Font Type</label>
+                                            <select class="field form-input form-control" id="descriptionFontType" ng-options="option for option in fontTypeList" name="descriptionFontType" ng-model="description.fontType" required>
+                                                <option class="opt-default" value="" selected="selected">Select Font Type
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>    
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label>Font Size</label>
+                                            <select class="field form-input form-control" id="descriptionFontSize" ng-options="option for option in fontSizeList" name="titleFontSize" ng-model="description.fontSize" required>
+                                                <option class="opt-default" value="" selected="selected">Select Font Size
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>   
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label>Alignment</label>
+                                            <!-- <input type="text" class="form-control" name="alignment" ng-model="title.alignment" placeholder="Enter Alignment"> -->
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" id="descriptionAlignmentLeft" name="descriptionAlignmentLeft" ng-model="description.alignment" value="left">
+                                                <label class="custom-control-label" for="descriptionAlignmentLeft">left</label>
+                                            </div>
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" id="descriptionAlignmentCenter" name="descriptionAlignmentCenter"ng-model="description.alignment"  value="center">
+                                                <label class="custom-control-label" for="descriptionAlignmentCenter">Center</label>
+                                            </div>
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" id="descriptionAlignmentRight" name="descriptionAlignmentRight" ng-model="description.alignment" value="right">
+                                                <label class="custom-control-label" for="descriptionAlignmentRight">Right</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label>Padding</label>
+                                            <div class="row">
+                                                <div class="col-6"><input type="text" class="form-control" id="descriptionPaddingTop" ng-model="description.paddingTop" placeholder="top"> </div>
+                                                <div class="col-6"><input type="text" class="form-control" id="descriptionPaddingBottom" ng-model="description.paddingBottom" placeholder="bottom"> </div>
+                                                <div class="col-6"><input type="text" class="form-control" id="descriptionPaddingLeft" ng-model="description.paddingLeft" placeholder="left"> </div>
+                                                <div class="col-6"><input type="text" class="form-control" id="descriptionPaddingRight" ng-model="description.paddingRight" placeholder="right"> </div>
+                                            </div>
+                                        </div>
+                                    </div>    
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label>margin</label>
+                                            <div class="row">
+                                                <div class="col-6"><input type="text" class="form-control" id="descriptionMarginTop" ng-model="description.marginTop" placeholder="top"> </div>
+                                                <div class="col-6"><input type="text" class="form-control" id="descriptionMarginBottom" ng-model="description.marginBottom" placeholder="bottom"> </div>
+                                                <div class="col-6"><input type="text" class="form-control" id="descriptionMarginLeft" ng-model="description.marginLeft" placeholder="left"> </div>
+                                                <div class="col-6"><input type="text" class="form-control" id="descriptionMarginRight" ng-model="description.marginRight" placeholder="right"> </div>
+                                            </div>
+                                        </div>
+                                    </div>    
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a  href="javascript:void(0)" data-target="#ButtonSubmenu"  data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                            CTA Button
+                        </a>
+                        <div class="collapse list-unstyled" id="ButtonSubmenu">
+                            <div class="submenuCol">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label>Text</label>
+                                            <input class="form-control" type="text" ng-model="ctaButton.text" id="ctaButtonTitle" name="ctaButtonTitle" placeholder="Enter Button Text" ng-maxlength="90">
+                                            <div class="ng-cloak error-block" ng-if="!customizationForm.ctaButtonTitle.$valid" >
+                                                <span ng-show="customizationForm.ctaButtonTitle.$error.maxlength">
+                                            <img src="resources/images/invalid.svg" class="error-img" />
+                                            </span>
+                                                <div ng-show="customizationForm.ctaButtonTitle.$error.maxlength" class="error-field">
+                                                    Mandatory : This cannot be left blank.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label>Background Color</label>
+                                            <input type="color" class="form-control" id="ctaButtonColor" ng-model="ctaButton.color" value="#ff0000"> 
+                                       </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label>Text Color</label>
+                                            <input type="color" class="form-control" id="ctaButtonTextColor" ng-model="ctaButton.textColor" value="#ff0000"> 
+                                       </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label>Font Style</label>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="ctaButtonIsBold" name="ctaButtonIsBold" ng-model="ctaButton.isBold">
+                                                <label class="custom-control-label" for="ctaButtonIsBold">Bold</label>
+                                              </div>
+                                              <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="ctaButtonIsUnderline" name="ctaButtonIsUnderline" ng-model="ctaButton.isUnderline" >
+                                                <label class="custom-control-label" for="ctaButtonIsUnderline">Underline</label>
+                                              </div>
+                                              <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="ctaButtonIsItalic" name="ctaButtonIsItalic" ng-model="ctaButton.isItalic">
+                                                <label class="custom-control-label" for="ctaButtonIsItalic">Italic</label>
+                                              </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label>Font Type</label>
+                                            <select class="field form-input form-control" id="ctaButtonFontType" ng-options="option for option in fontTypeList" name="ctaButtonFontType" ng-model="ctaButton.fontType" required>
+                                                <option class="opt-default" value="" selected="selected">Select Font Type
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>    
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label>Font Size</label>
+                                            <select class="field form-input form-control" id="ctaButtonFontSize" ng-options="option for option in fontSizeList" name="ctaButtonFontSize" ng-model="ctaButton.fontSize" required>
+                                                <option class="opt-default" value="" selected="selected">Select Font Size
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>   
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label>Alignment</label>
+                                            <!-- <input type="text" class="form-control" name="alignment" ng-model="title.alignment" placeholder="Enter Alignment"> -->
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" id="ctaButtonAlignmentLeft" name="ctaButtonAlignmentLeft" ng-model="ctaButton.alignment" value="left">
+                                                <label class="custom-control-label" for="ctaButtonAlignmentLeft">left</label>
+                                            </div>
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" id="ctaButtonAlignmentCenter" name="ctaButtonAlignmentCenter"ng-model="ctaButton.alignment"  value="center">
+                                                <label class="custom-control-label" for="ctaButtonAlignmentCenter">Center</label>
+                                            </div>
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" id="ctaButtonAlignmentRight" name="ctaButtonAlignmentRight" ng-model="ctaButton.alignment" value="right">
+                                                <label class="custom-control-label" for="ctaButtonAlignmentRight">Right</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label>Text Padding</label>
+                                            <div class="row">
+                                                <div class="col-6"><input type="text" class="form-control" id="descriptionPaddingTop" ng-model="ctaButton.paddingTop" placeholder="top"> </div>
+                                                <div class="col-6"><input type="text" class="form-control" id="descriptionPaddingBottom" ng-model="ctaButton.paddingBottom" placeholder="bottom"> </div>
+                                                <div class="col-6"><input type="text" class="form-control" id="descriptionPaddingLeft" ng-model="ctaButton.paddingLeft" placeholder="left"> </div>
+                                                <div class="col-6"><input type="text" class="form-control" id="descriptionPaddingRight" ng-model="ctaButton.paddingRight" placeholder="right"> </div>
+                                            </div>
+                                        </div>
+                                    </div>    
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label>margin</label>
+                                            <div class="row">
+                                                <div class="col-6"><input type="text" class="form-control" id="ctaButtonMarginTop" ng-model="ctaButton.marginTop" placeholder="top"> </div>
+                                                <div class="col-6"><input type="text" class="form-control" id="ctaButtonMarginBottom" ng-model="ctaButton.marginBottom" placeholder="bottom"> </div>
+                                                <div class="col-6"><input type="text" class="form-control" id="ctaButtonMarginLeft" ng-model="ctaButton.marginLeft" placeholder="left"> </div>
+                                                <div class="col-6"><input type="text" class="form-control" id="ctaButtonMarginRight" ng-model="ctaButton.marginRight" placeholder="right"> </div>
+                                            </div>
+                                        </div>
+                                    </div>    
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+            </ul>
+        </form>
+    </nav>
+
+    <!-- Page Content  -->
+    <div id="content" >
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+
+                <button type="button" id="sidebarCollapse" class="btn btn-info">
+                    <i class="fa fa-align-left"></i>
+                </button>
+                <button class="btn menuBtn d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-align-justify"></i>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav ml-auto topMenu">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Page</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Page</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Page</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Page</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="fullBoxCon" >
+            <div class="container-fluid">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 align-self-center" >
+                            <div class="imgTextBoxCon" >
+                                <div class="imgTextBox">
+                                    <div class="imgTextBoxSmTitle"><i class="fa fa-check-circle" aria-hidden="true"></i> Variant 1</div>
+                                    <div class="imgTitleBox bgImgesOpecity" id="html-content-holder" style="background-image: url({{backGroundImage}})">
+                                        <div class="imgTitleBoxLogo">
+                                            <div class="imgBoxLogo" ng-style="{ 'text-align' : logo.alignment }">
+                                                <img ng-if="logo.logoFileView != undefined && logo.logoFileView.uploaded_image_path != undefined" ng-src="{{logo.logoFileView.uploaded_image_path}}" alt="{{logo.logoFileView.data.uploaded_image_path}}">
+                                                <img ng-if="logo.logoFileView == undefined || logo.logoFileView.uploaded_image_path == undefined" ng-src="resources/images/logo.png">
+                                            </div>
+                                        </div>
+                                        <div class="imgTitleBoxCaption">
+                                            <h1><span class="inlineBlock" ng-class="{'decorationUnderline': title.isUnderline, 'styleItalic': title.isItalic == true,'weightBold': title.isBold == true}" ng-style="{'color': title.color, 'font-family': title.fontType, 'font-size': title.fontSize, 'text-align': title.alignment, 'padding-left': title.paddingLeft, 'padding-right': title.paddingRight, 'padding-top': title.paddingTop, 'padding-bottom': title.paddingBottom, 'margin-top': title.marginTop, 'margin-bottom': title.marginBottom,'margin-left': title.marginLeft, 'margin-right': title.marginRight}">{{title.text}}</span></h1>
+                                            <div class="descriptionText"><span class="inlineBlock" ng-class="{'decorationUnderline': description.isUnderline == true, 'styleItalic': description.isItalic == true,'weightBold': description.isBold == true}" ng-style="{'color': description.color, 'font-style': description.fontStrength, 'font-family': description.fontType, 'font-size': description.fontSize, 'text-align': description.alignment, 'padding-left': description.paddingLeft, 'padding-right': description.paddingRight, 'padding-top': description.paddingTop, 'padding-bottom': description.paddingBottom, 'margin-top': description.marginTop, 'margin-bottom': description.marginBottom,'margin-left': description.marginLeft, 'margin-right': description.marginRight}">{{description.text}}</span></div>
+                                        </div>
+                                        <div class="imgTitleBoxBtnCon">
+                                        <span class="inlineBlock" ng-style="{ 'text-align' : ctaButton.alignment }">
+                                                <a href="" ng-class="{'decorationUnderline': ctaButton.isUnderline == true, 'styleItalic': ctaButton.isItalic == true,'weightBold': ctaButton.isBold == true}" class="imgTitleBoxBtn" ng-style="{'background-color': ctaButton.color,'color': ctaButton.textColor,'font-style': ctaButton.fontStrength, 'font-family': ctaButton.fontType, 'font-size': ctaButton.fontSize, 'padding-left': ctaButton.paddingLeft, 'padding-right': ctaButton.paddingRight, 'padding-top': ctaButton.paddingTop, 'padding-bottom': ctaButton.paddingBottom , 'margin-top': ctaButton.marginTop , 'margin-bottom': ctaButton.marginBottom , 'margin-left': ctaButton.marginLeft , 'margin-right': ctaButton.marginRight }" >
+                                                    <span ng-style="{'color': button.textColor, 'font-style': button.fontStrength, 'font-family': button.fontType, 'font-size': button.fontSize, 'text-align': button.alignment,}">{{ctaButton.text}}</span>
+                                                </a>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>            
+    </div>
+</div>
+<style>
+.bgImgesOpecity::before {
+    opacity: {{image.imageOpacity}};
+}
+</style>
+<script> 
+        // $(document).ready(function() { 
+    
+        // Global variable 
+        var element = $("#html-content-holder"); 
+    
+        // Global variable 
+        var getCanvas; 
+        
+        $("#btn-Convert-Html2Image").on('click', function() { 
+            html2canvas(element, { 
+            onrendered: function(canvas) { 
+                getCanvas = canvas;
+                var imgageData = getCanvas.toDataURL("image/png"); 
+                var newData = imgageData.replace(/^data:image\/png/, "data:application/octet-stream")
+                $("#btn-Convert-Html2Image").attr("download", "ImageDownload.png").attr("href", newData); 
+                }
+            }); 
+        }); 
+</script> 
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#sidebar").mCustomScrollbar({
+            theme: "minimal"
+        });
+
+        $('#sidebarCollapse').on('click', function () {
+            $('#sidebar, #content').toggleClass('active');
+            $('.collapse.in').toggleClass('in');
+            $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+        });
+    });
+</script>
+

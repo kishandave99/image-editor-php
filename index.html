@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html ng-app="image-editor">
+
+<head>
+    <title ng-bind="title"></title>
+    <base href="/image-editor/" />
+    <!-- <base href="/" /> -->
+    <meta name="keyword" />
+    <meta name="description" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="resources/css/angular-block-ui.min.css" />
+
+    <script src="resources/js/jquery.min.js"></script>
+    <script src="resources/js/popper.min.js"></script>
+
+     <!-- Bootstrap CSS File -->
+    <link href="resources/css/bootstrap.min.css" rel="stylesheet">
+    <link href="resources/css/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+
+    <link href="resources/plugins/sweet-alert/sweetalert.css" rel="stylesheet" />
+    <link href="resources/plugins/fileuploads/css/dropify.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="resources/css/style.css" />
+
+	<script src="resources/js/html2canvas.min.js"> 
+	</script> 
+
+</head>
+
+<body class="portal-popup ">
+    
+    <div block-ui="body">
+        <div ng-include="'modules/common/view/header.html'"></div>
+        <!-- Blank Loading Div Start-->
+        <!-- <div ng-show="stateIsLoading" style="height: 500px;"></div> -->
+        <div ng-show="stateIsLoading" ></div>
+        <!-- Blank Loading Div End -->
+        <div ng-view ng-show="!stateIsLoading" ></div>
+        
+        <div ng-include="'modules/common/view/footer.html'"></div>
+        <!-- Alert Div Start -->
+        <div class="col-xs-12">
+            <div class="p-f" id="p-f"></div>
+        </div>
+        <!-- Alert Div End -->
+    </div>    
+
+    <!-- Load Angular JS-->
+    <script src="resources/js/angular/angular.js"></script>
+    <script src="resources/js/angular/angular-block-ui.min.js"></script>
+    <script src="resources/js/angular/angular-cookies.min.js"></script>
+    <script src="resources/js/angular/angular-route.js"></script>
+    <script src="resources/js/angular/ng-file-upload.js"></script>
+    <script src="resources/js/angular/dmStyle.js"></script>
+  
+    <!-- Config -->
+    <script src="config/environment.js?v=0.0.0"></script>
+    <script src="config/app.js?v=0.0.0"></script>
+    <script src="config/routing.js?v=0.0.0"></script>
+    <script src="config/appconfig.js?v=0.0.0"></script>
+
+
+    <!-- Dependency -->
+    <script src="resources/plugins/sweet-alert/sweetalert.min.js"></script>
+
+    <!-- Load Theme JS -->
+    <script src="resources/js/jquery/jquery.js"></script>
+    <script src="resources/js/jquery/jquery.min.js"></script>
+
+
+    <!-- Controller -->
+    <script src="modules/common/controller/headerController.js?v=0.0.0"></script>
+    <script src="modules/common/controller/footerController.js?v=0.0.0"></script>
+    <script src="modules/common/controller/changeHeader.js?v=0.0.0"></script>
+    <script src="modules/home/controller/homeController.js?v=0.0.0"></script>
+
+    <!-- Directive -->
+    <script src="modules/common/directive/focus-invalid-field.js"></script>
+    <!-- Service -->
+    <script src="modules/common/service/alertService.js?v=0.0.0"></script>
+    <script src="modules/common/service/seo.js?v=0.0.0"></script>
+    <script src="modules/common/service/cookieService.js?v=0.0.0"></script>
+
+    <!-- file uploads js -->
+    <script src="resources/plugins/fileuploads/js/dropify.min.js"></script>
+
+    <!-- jQuery CDN - Slim version (=without AJAX)-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <!-- jQuery Custom Scroller CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script> -->
+        
+</body>
+
+</html>

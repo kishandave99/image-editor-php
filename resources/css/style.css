@@ -1,0 +1,618 @@
+
+body {
+    font-family: 'Roboto', sans-serif;  
+}
+
+p {
+  
+}
+
+a,
+a:hover,
+a:focus {
+   
+    transition: all 0.3s;
+}
+
+.navbar {
+    padding: 15px 10px;
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 15px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 40px 0;
+}
+
+
+
+.wrapper {
+    display: flex;
+    width: 100%;
+}
+
+#sidebar {
+    width: 280px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    z-index: 999;
+    background: #fff;
+    color: #000;
+    transition: all 0.3s;
+    box-shadow: 0 0 8px rgb(0 0 0 / 0.16);
+    overflow-x: hidden;
+}
+
+#sidebar.active {
+    margin-right: -300px;
+}
+
+#sidebar .sidebar-header {
+    padding: 18px;
+    background: #70a0eb;
+    font-size: 26px;
+    line-height: normal;
+    color: #fff;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+}
+
+#sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+
+#sidebar ul li a:hover {
+    color: #70a0eb;
+    background: #fff;
+    text-decoration: none;
+    opacity: 0.8;
+}
+#sidebar ul li.active>a,
+a[aria-expanded="true"] {
+    color: #fff;
+    background: #70a0eb;
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #6d7fcc;
+}
+
+ul.CTAs {
+    padding: 20px;
+}
+
+ul.CTAs a {
+    text-align: center;
+    font-size: 0.9em !important;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+a.download {
+    background: #fff;
+    color: #7386D5;
+}
+
+a.article,
+a.article:hover {
+    background: #6d7fcc !important;
+    color: #fff !important;
+}
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+#content {
+    width: calc(100% - 280px);
+    padding: 0;
+    min-height: 100vh;
+    transition: all 0.3s;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#content.active {
+    width: 100%;
+}
+
+.fullBoxCon {
+    width: 100%;
+    display: inline-block;
+    padding: 15px;
+}
+.imgTextBoxCon {
+    padding: 24px;
+}
+.imgTextBox {
+    width: 330px;
+    min-height: auto;
+    background: #fff;
+    margin: 15px auto;
+    box-shadow: 0 0 10px 2px rgb(0 0 0 / 0.16);
+    padding: 15px;
+    max-width: 100%;
+}
+.imgTextBoxSmTitle {
+    font-size: 16px;
+    line-height: normal;
+    color: #000000;
+    margin-bottom: 15px;
+}
+.imgTextBoxSmTitle .fa{
+    color: #70a0eb;
+}
+.imgTitleBox {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    display: inline-block;
+    padding: 72px 15px;
+    background-color: #eb8f82;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border: 1px solid #000000;
+}
+.imgTitleBoxLogo {
+    position: absolute;
+    color: #ffffff;
+    width: 100%;
+    display: inline-block;
+    top: 10px;
+    left: 0;
+    overflow: hidden;
+    z-index: 9;
+}
+.imgBoxLogo {
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    padding: 0 10px;
+}
+.imgTitleBoxLogo img
+{   height: 40px;
+    width: auto;
+}
+.imgTitleBoxBtnCon {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
+    padding: 15px;
+    z-index: 9;
+}
+.imgTitleBoxBtn {
+    background: #ec8411;
+    color: #fff;
+    padding: 9px 12px;
+    width: auto;
+    display: inline-block;
+    font-size: 16px;
+    line-height: normal;
+    border-radius: 16px;
+    min-width: 100px;
+}
+.imgTitleBoxBtn:hover {
+    background: #ec8411;
+    color: #fff;
+    opacity: 0.75;
+}
+.imgTitleBoxCaption {
+    
+}
+.descriptionText {
+    font-size: 18px;
+}
+.descriptionText {
+    font-size: 18px;
+    line-height: normal;
+    color: #fff;
+    opacity: 0.8;
+    text-shadow: 0 0px 3px #000;
+    font-weight: 500;
+}
+.submenuCol {
+    padding: 15px 15px;
+    width: 100%;
+    display: inline-block;
+}
+label {
+    display: inline-block;
+    margin-bottom: .5rem;
+    font-size: 10px;
+    line-height: normal;
+    color: #000000;
+}
+.form-control {
+    border: 0;
+    border-bottom: 1px solid #000 !important;
+    border-radius: 0;
+    padding: 0;
+    font-size: 12px;
+    line-height: normal;
+    color: #000000;
+}
+.form-control:focus {
+    color: #000000;
+    background-color: #fff;
+    outline: 0;
+    box-shadow: none;
+}
+.btn-info {
+    color: #fff;
+    background-color: #70a0eb;
+    border-color: #70a0eb;
+}
+.btn-info:hover {
+    color: #fff;
+    background-color: #70a0eb;
+    border-color: #70a0eb;
+}
+.btn-info.focus, .btn-info:focus {
+    color: #fff;
+    background-color: #70a0eb;
+    border-color: #70a0eb;
+    box-shadow: 0 0 0 0.2rem rgb(112 160 235 / 0.16);
+}
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 0;
+    padding-left: 0;
+}
+.topMenu li a {
+    font-size: 16px;
+    line-height: normal;
+    color: #000 !important;
+    opacity: 0.75;
+    padding: 0 12px !important;
+}
+.topMenu li a:hover, .topMenu li.active a
+{   opacity: 1;
+}
+.menuBtn {
+    color: #70a0eb;
+    font-size: 18px;
+    line-height: normal;
+}
+.menuBtn:hover
+{color: #70a0eb;
+}
+.btn.focus, .btn:focus {
+    outline: 0;
+    box-shadow: none;
+}
+h1 {
+    font-size: 26px;
+    line-height: normal;
+    color: #fff;
+    margin-bottom: 15px;
+}
+.inlineBlock
+{   display: inline-block;
+    width: 100%;
+}
+.bgImgesOpecity
+{   position: relative;
+}
+.bgImgesOpecity::before {
+    content: '';
+    background: #000;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0.1;
+    z-index: 1;
+}
+.imgTitleBoxCaption {
+    position: relative;
+    z-index: 2;
+}
+.decorationUnderline {
+    text-decoration: underline;
+   
+}
+.styleItalic{
+    font-style: italic;
+}
+.weightBold {
+    font-weight: bold;
+}
+.logoText {
+    font-size: 26px;
+    line-height: normal;
+    color: #ffffff;
+    font-weight: 500;
+}
+.dBtn {
+    background: #ec8411;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 15px;
+}
+.dBtn:hover {
+    background: #ec8411;
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.75;
+}
+@media only screen and (max-width: 1199px) {
+}
+@media only screen and (max-width: 991px) {
+    .navbar-collapse {
+        position: absolute;
+        background: #70a0eb;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 70px;
+        z-index: 9;
+    }
+    .topMenu li a {
+        padding: 6px 12px !important;
+    }
+    #sidebar .sidebar-header
+    {   font-size: 24px;
+    }
+
+}
+@media only screen and (max-width: 767px) { 
+    #sidebar {
+        margin-right: -300px;
+    }
+    #sidebar.active {
+        margin-right: 0;
+    }
+    #content {
+        width: 100%;
+    }
+    #content.active {
+        width: calc(100% - 280px);
+    }
+    #sidebarCollapse span {
+        display: none;
+    }
+    .imgTextBoxCon {
+        padding: 0;
+    }
+}
+.custom-file-input {
+    border: 0;
+    border-bottom: 1px solid #000 !important;
+    border-radius: 0;
+    padding: 0;
+    font-size: 12px;
+    line-height: normal;
+    color: #000000;
+    overflow: hidden;
+    height: 30px;
+}
+.custom-file-label {
+    border: 1px solid #000 !important;
+    border-radius: 0;
+    padding: 9px 9px;
+    font-size: 12px;
+    line-height: normal;
+    color: #000000;
+    height: 32px;
+    margin: 0;
+}
+.custom-file
+{   height: auto;
+}
+.custom-file-label::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    display: block;
+    height: 30px;
+    padding: 6px 12px;
+    line-height: normal;
+    color: #ffffff;
+    content: "Browse";
+    background-color: #70a0eb;
+    border-left: inherit;
+    border-radius: 0;
+    font-size: 14px;
+}
+.custom-file-input:focus~.custom-file-label {
+    box-shadow: none;
+}
+.custom-control-input:checked~.custom-control-label::before {
+    color: #fff;
+    border-color: #70a0eb;
+    background-color: #70a0eb;
+    box-shadow: none !important;
+}
+.custom-control.custom-radio {
+    margin: 3px auto;
+    width: 100%;
+    display: inline-block;
+}
+.custom-control-label {
+    position: relative;
+    margin-bottom: 0;
+    vertical-align: top;
+    font-size: 12px;
+    line-height: 24px;
+}
+.error-field {
+    color: red;
+    line-height: normal;
+    font-size: 12px;
+    width: auto;
+    display: inline-block;
+}
+
+/***********************BlockUI***********************************/
+
+.pswp__preloader {
+    width: 44px;
+    height: 44px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -22px;
+    opacity: 0;
+    -webkit-transition: opacity 0.25s ease-out;
+    transition: opacity 0.25s ease-out;
+    will-change: opacity;
+    direction: ltr;
+}
+
+.pswp__preloader__icn {
+    width: 20px;
+    height: 20px;
+    margin: 12px;
+}
+
+.pswp__preloader--active {
+    opacity: 1;
+}
+
+.pswp__preloader--active .pswp__preloader__icn {
+    /* We use .gif in browsers that don't support CSS animation */
+    background: url(public/resources/images/loader.gif) 0 0 no-repeat;
+}
+
+.pswp--css_animation .pswp__preloader--active {
+    opacity: 1;
+}
+
+.pswp--css_animation .pswp__preloader--active .pswp__preloader__icn {
+    -webkit-animation: clockwise 500ms linear infinite;
+    animation: clockwise 500ms linear infinite;
+}
+
+.pswp--css_animation .pswp__preloader--active .pswp__preloader__donut {
+    -webkit-animation: donut-rotate 1000ms cubic-bezier(0.4, 0, 0.22, 1) infinite;
+    animation: donut-rotate 1000ms cubic-bezier(0.4, 0, 0.22, 1) infinite;
+}
+
+.pswp--css_animation .pswp__preloader__icn {
+    background: none;
+    opacity: 0.75;
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    margin: 0;
+}
+
+.pswp--css_animation .pswp__preloader__cut {
+    /*
+					  The idea of animating inner circle is based on Polymer ("material") loading indicator
+					   by Keanu Lee https://blog.keanulee.com/2014/10/20/the-tale-of-three-spinners.html
+				  */
+    position: relative;
+    width: 7px;
+    height: 14px;
+    overflow: hidden;
+}
+
+.pswp--css_animation .pswp__preloader__donut {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 14px;
+    height: 14px;
+    border: 2px solid #FFF;
+    border-radius: 50%;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: none;
+    margin: 0;
+}
+
+@media screen and (max-width: 1024px) {
+    .pswp__preloader {
+        position: relative;
+        left: auto;
+        top: auto;
+        margin: 0;
+        float: right;
+    }
+}
+
+.block-ui-message {
+    background-color: #3330;
+    background-image: url(../images/loader.gif);
+    display: inline-block;
+    text-align: left;
+    color: #f5f5f5;
+    /* padding: 10px 12px 26px 22px; */
+    padding: 13px;
+    border-radius: 4px;
+    font-size: 20px;
+    font-weight: 700;
+    filter: alpha(opacity=100);
+    background-size: 25px 25px !important;
+    filter: alpha(opacity=100);
+    margin-top: -10px;
+}
+
+.block-ui-message-container {
+    position: absolute;
+    top: 45% !important;
+    left: 0;
+    right: 0;
+    height: 0;
+    text-align: center;
+    z-index: 10001;
+}
+
+.p-f {
+    position: fixed;
+    z-index: 999999999999;
+    bottom: 5px;
+    right: 10px
+}
