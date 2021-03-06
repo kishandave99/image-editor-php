@@ -5,8 +5,8 @@
     window.environment.webService = 'localhost/';
 
     // Base url
-    window.environment.baseUrl = '/image-editor';
-    // window.environment.baseUrl = '';
+    // window.environment.baseUrl = '/image-editor';
+    window.environment.baseUrl = '';
 
     // Public Resource url
     window.environment.publicResourceUrl = '';
