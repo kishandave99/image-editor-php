@@ -51,8 +51,12 @@ function homeController($scope, $location, $rootScope, $window, $http, blockUI ,
                         fields: {},
                         file: file
                     }).then(function (response) {
-                        $scope.backGroundImage = response.data.data.uploaded_image_path;
-                        console.log($scope.backGroundImage);
+                        if(response != undefined && response.data != undefined && response.data.success == 1){
+                            $scope.backGroundImage = response.data.data.uploaded_image_path;
+                            console.log($scope.backGroundImage)
+                        } else {
+                            alert.popUpShowHide('failure', response.data.message);
+                        }
                         // if (response.data.code >= 1000 && response.data.code < 2000) {
                         //     alert.popUpShowHide('success', "File Uploded Successfully");
 

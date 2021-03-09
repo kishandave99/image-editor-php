@@ -1,7 +1,9 @@
 <?php
 if(isset($_FILES["file"]["name"])) {
 $target_dir = "images/";
-$target_file = $target_dir . basename($_FILES["file"]["name"]);
+$date = date_create();
+$epoch = date_timestamp_get($date);
+$target_file = $target_dir . basename($epoch.$_FILES["file"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
@@ -50,9 +52,10 @@ if ($uploadOk == 0) {
 // if everything is ok, try to upload file
 } else {
   if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
+    $tmp = $_FILES["file"]["size"].$_FILES["file"]["name"];
     //echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
-	$uploadedImageName = htmlspecialchars( basename( $_FILES["file"]["name"]));
-	$response = ['success' => 1, "message" => "File uploaded sucessfully.", "data" => [ "uploaded_image_path" => "images/".$uploadedImageName  ]];
+	$uploadedImageName = htmlspecialchars( basename($epoch.$_FILES["file"]["name"]));
+	$response = ['success' => 1, "message" => "File uploaded sucessfully.", "data" => [ "uploaded_image_path" => "images/".$uploadedImageName, 'tp' => $_FILES["file"]  ]];
 	echo json_encode($response);
 	exit();
   } else {
